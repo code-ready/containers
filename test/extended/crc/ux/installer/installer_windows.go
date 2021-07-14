@@ -21,7 +21,7 @@ const (
 
 var installFlow = []element{
 	{"Next", elementClickTime, ux.BUTTON},
-	{"accept", elementClickTime, ux.CHECKBOX},
+	{"I accept the terms in the License Agreement", elementClickTime, ux.CHECKBOX},
 	{"Next", elementClickTime, ux.BUTTON},
 	{"Next", elementClickTime, ux.BUTTON},
 	{"Install", installationTime, ux.BUTTON},
