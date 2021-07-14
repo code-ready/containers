@@ -19,6 +19,15 @@ github.com/VividCortex/ewma
 # github.com/YourFin/binappend v0.0.0-20181105185800-0add4bf0b9ad
 ## explicit
 github.com/YourFin/binappend
+# github.com/adrianriobo/gowinx v0.0.0-20210713134700-9d7cd8f2ed6e
+## explicit
+github.com/adrianriobo/gowinx/pkg/util
+github.com/adrianriobo/gowinx/pkg/util/logging
+github.com/adrianriobo/gowinx/pkg/win32/api/user-interface/windows-accesibility-features
+github.com/adrianriobo/gowinx/pkg/win32/api/user-interface/windows-and-messages
+github.com/adrianriobo/gowinx/pkg/win32/api/util
+github.com/adrianriobo/gowinx/pkg/win32/interaction
+github.com/adrianriobo/gowinx/pkg/win32/ux
 # github.com/alexbrainman/sspi v0.0.0-20180613141037-e580b900e9f5
 github.com/alexbrainman/sspi
 github.com/alexbrainman/sspi/negotiate
@@ -169,7 +178,7 @@ github.com/inconshreveable/mousetrap
 # github.com/jinzhu/copier v0.3.0
 ## explicit
 github.com/jinzhu/copier
-# github.com/json-iterator/go v1.1.10
+# github.com/json-iterator/go v1.1.11
 github.com/json-iterator/go
 # github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51
 github.com/kballard/go-shellquote
@@ -277,6 +286,8 @@ github.com/openshift/library-go/pkg/oauth/oauthdiscovery
 ## explicit
 github.com/openshift/oc/pkg/helpers/term
 github.com/openshift/oc/pkg/helpers/tokencmd
+# github.com/openstandia/w32uiautomation v0.0.0-20190416091226-c987b5b65d6b
+github.com/openstandia/w32uiautomation
 # github.com/patrickmn/go-cache v2.1.0+incompatible
 github.com/patrickmn/go-cache
 # github.com/pbnjay/memory v0.0.0-20201129165224-b12e5d931931
@@ -285,8 +296,7 @@ github.com/pbnjay/memory
 # github.com/pborman/uuid v1.2.1
 ## explicit
 github.com/pborman/uuid
-# github.com/pelletier/go-toml v1.9.1
-## explicit
+# github.com/pelletier/go-toml v1.9.3
 github.com/pelletier/go-toml
 # github.com/pkg/browser v0.0.0-20210115035449-ce105d075bb4
 ## explicit
@@ -306,8 +316,7 @@ github.com/segmentio/backo-go
 # github.com/sirupsen/logrus v1.8.1
 ## explicit
 github.com/sirupsen/logrus
-# github.com/spf13/afero v1.5.1
-## explicit
+# github.com/spf13/afero v1.6.0
 github.com/spf13/afero
 github.com/spf13/afero/mem
 # github.com/spf13/cast v1.3.1
@@ -322,7 +331,7 @@ github.com/spf13/jwalterweatherman
 # github.com/spf13/pflag v1.0.5
 ## explicit
 github.com/spf13/pflag
-# github.com/spf13/viper v1.7.1
+# github.com/spf13/viper v1.8.0
 ## explicit
 github.com/spf13/viper
 # github.com/stretchr/objx v0.3.0
@@ -371,8 +380,7 @@ golang.org/x/net/internal/iana
 golang.org/x/net/internal/socket
 golang.org/x/net/ipv4
 golang.org/x/net/ipv6
-# golang.org/x/oauth2 v0.0.0-20201203001011-0b49973bad19
-## explicit
+# golang.org/x/oauth2 v0.0.0-20210402161424-2e8d93401602
 golang.org/x/oauth2
 golang.org/x/oauth2/internal
 # golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
@@ -619,7 +627,7 @@ k8s.io/klog/v2
 # k8s.io/kubectl v0.20.1 => github.com/openshift/kubernetes-kubectl v0.0.0-20210108115031-c0d78c0aeda3
 k8s.io/kubectl/pkg/util/interrupt
 k8s.io/kubectl/pkg/util/term
-# k8s.io/utils v0.0.0-20201110183641-67b214c5f920
+# k8s.io/utils v0.0.0-20210527160623-6fdb442a123b
 k8s.io/utils/integer
 # sigs.k8s.io/structured-merge-diff/v4 v4.0.2
 sigs.k8s.io/structured-merge-diff/v4/value
