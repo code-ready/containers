@@ -13,25 +13,24 @@ import (
 )
 
 const (
-	installerWindowTitle string        = "CodeReady Containers Setup"
-	elementClickDelay    time.Duration = 2 * time.Second
-	installationTime     time.Duration = 30 * time.Second
+	installerWindowTitle string = "CodeReady Containers Setup"
+
+	elementClickTime time.Duration = 2 * time.Second
+	installationTime time.Duration = 30 * time.Second
 )
 
-type installerElement struct {
-	name   string
-	id     string
-	screen string
+var installFlow = map[string]button{
+	"welcomeNext":         {"Next", elementClickTime},
+	"licenseAccept":       {"accept", elementClickTime},
+	"licenseNext":         {"Next", elementClickTime},
+	"destinantionNext":    {"Next", elementClickTime},
+	"installationInstall": {"Install", installationTime},
+	"finalizationFinish":  {"Finish", elementClickTime}}
+
+type button struct {
+	id    string
+	delay time.Duration
 }
-
-var (
-	welcomeNextButton         = installerElement{name: "Next", id: "1", screen: "welcome"}
-	licenseAcceptCheck        = installerElement{name: "accept", id: "1", screen: "license"}
-	licenseNextButton         = installerElement{name: "Next", id: "3", screen: "license"}
-	destinantionNextButton    = installerElement{name: "Next", id: "1", screen: "destination"}
-	installationInstallButton = installerElement{name: "Install", id: "1", screen: "installation"}
-	finalizationFinishButton  = installerElement{name: "Finish", id: "1", screen: "finalization"}
-)
 
 type gowinxHandler struct {
 	CurrentUserPassword *string
@@ -53,33 +52,22 @@ func RequiredResourcesPath() (string, error) {
 func (g gowinxHandler) Install() error {
 	// Initialize context
 	win32waf.Initalize()
-	if err := runInstaller(*g.InstallerPath); err != nil {
+	installer, err := runInstaller(*g.InstallerPath)
+	if err != nil {
 		return err
 	}
-	// Welcome screen
-	if err := clickButton(welcomeNextButton); err != nil {
-		return err
-	}
-	// License screen
-	if err := clickButton(licenseAcceptCheck); err != nil {
-		return err
-	}
-	if err := clickButton(licenseNextButton); err != nil {
-		return err
-	}
-	// Destination
-	if err := clickButton(destinantionNextButton); err != nil {
-		return err
-	}
-	// Installation
-	if err := clickButton(installationInstallButton); err != nil {
-		return err
-	}
-	// wait installation process
-	time.Sleep(installationTime)
-	// Finalization
-	if err := clickButton(finalizationFinishButton); err != nil {
-		return err
+	for _, action := range installFlow {
+		actionButton, err := installer.GetElement(action.id, ux.BUTTON)
+		if err != nil {
+			logging.Error(err)
+			return err
+		}
+		if err := actionButton.Click(); err != nil {
+			logging.Error(err)
+			return err
+		}
+		// Delay after action
+		time.Sleep(action.delay)
 	}
 	// TODO which should be executed from a new cmd (to ensure ENVs)
 	// Finalize context
@@ -87,28 +75,12 @@ func (g gowinxHandler) Install() error {
 	return nil
 }
 
-func runInstaller(installerPath string) error {
+func runInstaller(installerPath string) (*ux.UXElement, error) {
 	cmd := exec.Command("msiexec.exe", "/i", installerPath, "/qf")
 	if err := cmd.Start(); err != nil {
-		return fmt.Errorf("error starting %v with error %v", cmd, err)
+		return nil, fmt.Errorf("error starting %v with error %v", cmd, err)
 	}
-	return nil
-}
-
-func clickButton(element installerElement) error {
-	// Ensure the installer is the active window
-	// Get action center window
-	if installerWindow, err := ux.GetActiveElement(installerWindowTitle, ux.WINDOW); err != nil {
-		return err
-	} else {
-		button, err := installerWindow.GetElement(element.name, ux.BUTTON)
-		if err != nil {
-			logging.Error(err)
-			return err
-		}
-		if err := button.Click(); err != nil {
-			return err
-		}
-	}
-	return nil
+	// delay to get window as active
+	time.Sleep(1 * time.Second)
+	return ux.GetActiveElement(installerWindowTitle, ux.WINDOW)
 }
