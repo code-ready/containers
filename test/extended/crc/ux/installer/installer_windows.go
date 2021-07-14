@@ -57,6 +57,8 @@ func (g gowinxHandler) Install() error {
 		return err
 	}
 	for _, action := range installFlow {
+		// delay to get window as active
+		time.Sleep(1 * time.Second)
 		actionButton, err := installer.GetElement(action.id, ux.BUTTON)
 		if err != nil {
 			logging.Error(err)
