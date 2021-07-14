@@ -3,8 +3,8 @@
 package installer
 
 import (
-	"exec"
 	"fmt"
+	"os/exec"
 	"time"
 
 	win32waf "github.com/adrianriobo/gowinx/pkg/win32/api/user-interface/windows-accesibility-features"
