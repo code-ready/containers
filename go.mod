@@ -21,8 +21,6 @@ require (
 	github.com/docker/go-units v0.4.0
 	github.com/fatih/color v1.12.0 // indirect
 	github.com/felixge/httpsnoop v1.0.2 // indirect
-	github.com/go-ole/go-ole v1.2.5 // indirect
-	github.com/godbus/dbus/v5 v5.0.4 // indirect
 	github.com/google/go-cmp v0.5.6 // indirect
 	github.com/gorilla/handlers v1.5.1
 	github.com/h2non/filetype v1.1.2-0.20210312132201-8345d11fd249
@@ -33,11 +31,9 @@ require (
 	github.com/klauspost/cpuid/v2 v2.0.6
 	github.com/kofalt/go-memoize v0.0.0-20200917044458-9b55a8d73e1c
 	github.com/libvirt/libvirt-go-xml v6.10.0+incompatible
-	github.com/magiconair/properties v1.8.5 // indirect
 	github.com/mattn/go-colorable v0.1.8
 	github.com/mattn/go-runewidth v0.0.13 // indirect
 	github.com/mgutz/ansi v0.0.0-20200706080929-d51e80ef957d // indirect
-	github.com/mitchellh/mapstructure v1.4.1 // indirect
 	github.com/onsi/ginkgo v1.16.2
 	github.com/onsi/gomega v1.12.0
 	github.com/openshift/api v0.0.0-20210105115604-44119421ec6b
@@ -52,7 +48,6 @@ require (
 	github.com/sirupsen/logrus v1.8.1
 	github.com/spf13/cast v1.3.1
 	github.com/spf13/cobra v1.1.3
-	github.com/spf13/jwalterweatherman v1.1.0 // indirect
 	github.com/spf13/pflag v1.0.5
 	github.com/spf13/viper v1.8.0
 	github.com/stretchr/objx v0.3.0 // indirect
@@ -65,9 +60,7 @@ require (
 	golang.org/x/sys v0.0.0-20210525143221-35b2ab0089ea
 	golang.org/x/term v0.0.0-20201126162022-7de9c90e9dd1
 	golang.org/x/text v0.3.6
-	google.golang.org/appengine v1.6.7 // indirect
 	gopkg.in/AlecAivazis/survey.v1 v1.8.8
-	gopkg.in/ini.v1 v1.62.0 // indirect
 	k8s.io/api v0.20.1
 	k8s.io/apimachinery v0.20.1
 	k8s.io/client-go v0.20.1

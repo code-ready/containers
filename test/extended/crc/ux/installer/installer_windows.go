@@ -19,13 +19,13 @@ const (
 	installationTime time.Duration = 30 * time.Second
 )
 
-var installFlow = map[string]element{
-	"welcomeNext":         {"Next", elementClickTime, ux.BUTTON},
-	"licenseAccept":       {"accept", elementClickTime, ux.CHECKBOX},
-	"licenseNext":         {"Next", elementClickTime, ux.BUTTON},
-	"destinantionNext":    {"Next", elementClickTime, ux.BUTTON},
-	"installationInstall": {"Install", installationTime, ux.BUTTON},
-	"finalizationFinish":  {"Finish", elementClickTime, ux.BUTTON}}
+var installFlow = []element{
+	{"Next", elementClickTime, ux.BUTTON},
+	{"accept", elementClickTime, ux.CHECKBOX},
+	{"Next", elementClickTime, ux.BUTTON},
+	{"Next", elementClickTime, ux.BUTTON},
+	{"Install", installationTime, ux.BUTTON},
+	{"Finish", elementClickTime, ux.BUTTON}}
 
 type element struct {
 	id          string
