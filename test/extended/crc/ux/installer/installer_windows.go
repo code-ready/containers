@@ -89,8 +89,9 @@ func (g gowinxHandler) Install() error {
 
 func runInstaller(installerPath string) error {
 	command := fmt.Sprintf("msiexec.exe /i %s /qf", installerPath)
-	if _, err := exec.Command(command).CombinedOutput(); err != nil {
-		return fmt.Errorf("error starting the msi installer")
+	cmd := exec.Command(command)
+	if err := cmd.Start(); err != nil {
+		return fmt.Errorf("error starting %v with error %v", cmd, err)
 	}
 	return nil
 }
