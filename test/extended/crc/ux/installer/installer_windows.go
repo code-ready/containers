@@ -19,17 +19,18 @@ const (
 	installationTime time.Duration = 30 * time.Second
 )
 
-var installFlow = map[string]button{
-	"welcomeNext":         {"Next", elementClickTime},
-	"licenseAccept":       {"accept", elementClickTime},
-	"licenseNext":         {"Next", elementClickTime},
-	"destinantionNext":    {"Next", elementClickTime},
-	"installationInstall": {"Install", installationTime},
-	"finalizationFinish":  {"Finish", elementClickTime}}
+var installFlow = map[string]element{
+	"welcomeNext":         {"Next", elementClickTime, ux.BUTTON},
+	"licenseAccept":       {"accept", elementClickTime, ux.CHECKBOX},
+	"licenseNext":         {"Next", elementClickTime, ux.BUTTON},
+	"destinantionNext":    {"Next", elementClickTime, ux.BUTTON},
+	"installationInstall": {"Install", installationTime, ux.BUTTON},
+	"finalizationFinish":  {"Finish", elementClickTime, ux.BUTTON}}
 
-type button struct {
-	id    string
-	delay time.Duration
+type element struct {
+	id          string
+	delay       time.Duration
+	elementType string
 }
 
 type gowinxHandler struct {
@@ -59,12 +60,14 @@ func (g gowinxHandler) Install() error {
 	for _, action := range installFlow {
 		// delay to get window as active
 		time.Sleep(1 * time.Second)
-		actionButton, err := installer.GetElement(action.id, ux.BUTTON)
+		element, err := installer.GetElement(action.id, action.elementType)
 		if err != nil {
+			err = fmt.Errorf("error getting %s with error %v", action.id, err)
 			logging.Error(err)
 			return err
 		}
-		if err := actionButton.Click(); err != nil {
+		if err := element.Click(); err != nil {
+			err = fmt.Errorf("error clicking %s with error %v", action.id, err)
 			logging.Error(err)
 			return err
 		}

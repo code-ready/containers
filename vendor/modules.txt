@@ -19,7 +19,7 @@ github.com/VividCortex/ewma
 # github.com/YourFin/binappend v0.0.0-20181105185800-0add4bf0b9ad
 ## explicit
 github.com/YourFin/binappend
-# github.com/adrianriobo/gowinx v0.0.0-20210713134700-9d7cd8f2ed6e
+# github.com/adrianriobo/gowinx v0.0.0-20210714142148-5014663f0654
 ## explicit
 github.com/adrianriobo/gowinx/pkg/util
 github.com/adrianriobo/gowinx/pkg/util/logging

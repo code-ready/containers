@@ -20,6 +20,7 @@ const (
 	TEXT     = "text"
 	MENU     = "menu"
 	MENUITEM = "menuitem"
+	CHECKBOX = "checkbox"
 
 	windowId   = wa.UIA_WindowControlTypeId
 	buttonId   = wa.UIA_ButtonControlTypeId
@@ -29,6 +30,7 @@ const (
 	textId     = wa.UIA_TextControlTypeId
 	menuId     = wa.UIA_MenuControlTypeId
 	menuitemId = wa.UIA_MenuControlTypeId
+	checkboxId = wa.UIA_CheckBoxControlTypeId
 )
 
 var elementTypes map[string]int64 = map[string]int64{
@@ -39,7 +41,8 @@ var elementTypes map[string]int64 = map[string]int64{
 	GROUP:    groupId,
 	TEXT:     textId,
 	MENU:     menuId,
-	MENUITEM: menuitemId}
+	MENUITEM: menuitemId,
+	CHECKBOX: checkboxId}
 
 type UXElement struct {
 	name        string

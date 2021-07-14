@@ -8,7 +8,7 @@ require (
 	github.com/StackExchange/wmi v0.0.0-20210224194228-fe8f1750fd46
 	github.com/VividCortex/ewma v1.2.0 // indirect
 	github.com/YourFin/binappend v0.0.0-20181105185800-0add4bf0b9ad
-	github.com/adrianriobo/gowinx v0.0.0-20210713134700-9d7cd8f2ed6e
+	github.com/adrianriobo/gowinx v0.0.0-20210714142148-5014663f0654
 	github.com/asaskevich/govalidator v0.0.0-20210307081110-f21760c49a8d
 	github.com/cavaliercoder/grab v2.0.0+incompatible
 	github.com/cheggaaa/pb/v3 v3.0.8
