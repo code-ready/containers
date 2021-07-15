@@ -53,13 +53,17 @@ func RequiredResourcesPath() (string, error) {
 func (g gowinxHandler) Install() error {
 	// Initialize context
 	win32waf.Initalize()
-	installer, err := runInstaller(*g.InstallerPath)
-	if err != nil {
+	if err := runInstaller(*g.InstallerPath); err != nil {
 		return err
 	}
 	time.Sleep(elementClickTime)
 	for _, action := range installFlow {
 		// delay to get window as active
+		// need to get window everytime as its layout is changing
+		installer, err := ux.GetActiveElement(installerWindowTitle, ux.WINDOW)
+		if err != nil {
+			return err
+		}
 		element, err := installer.GetElement(action.id, action.elementType)
 		if err != nil {
 			err = fmt.Errorf("error getting %s with error %v", action.id, err)
@@ -80,12 +84,12 @@ func (g gowinxHandler) Install() error {
 	return nil
 }
 
-func runInstaller(installerPath string) (*ux.UXElement, error) {
+func runInstaller(installerPath string) error {
 	cmd := exec.Command("msiexec.exe", "/i", installerPath, "/qf")
 	if err := cmd.Start(); err != nil {
-		return nil, fmt.Errorf("error starting %v with error %v", cmd, err)
+		return fmt.Errorf("error starting %v with error %v", cmd, err)
 	}
 	// delay to get window as active
 	time.Sleep(1 * time.Second)
-	return ux.GetActiveElement(installerWindowTitle, ux.WINDOW)
+	return nil
 }

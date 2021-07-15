@@ -90,8 +90,6 @@ github.com/VividCortex/ewma v1.2.0 h1:f58SaIzcDXrSy3kWaHNvuJgJ3Nmz59Zji6XoJR/q1o
 github.com/VividCortex/ewma v1.2.0/go.mod h1:nz4BbCtbLyFDeC9SUHbtcT5644juEuWfUAUnGx7j5l4=
 github.com/YourFin/binappend v0.0.0-20181105185800-0add4bf0b9ad h1:OUogh+sUEo6yRwGEkqifcr3MfXNi0AtdCSwh7H8yTUM=
 github.com/YourFin/binappend v0.0.0-20181105185800-0add4bf0b9ad/go.mod h1:QhzJSct0NZ/q7HOtQrw867061u93HYPWa4KTotzdzls=
-github.com/adrianriobo/gowinx v0.0.0-20210714142148-5014663f0654 h1:8i5DbwsHFeirhCeAGcw6HIwvv3PmERWrafKIAOiDGiY=
-github.com/adrianriobo/gowinx v0.0.0-20210714142148-5014663f0654/go.mod h1:cVDY+d4V1+LDY2BL0XLwsY5yXyxYf+e0NiNwnKJpQrk=
 github.com/adrianriobo/gowinx v0.0.0-20210715122219-84ff0829329c h1:DhnPmvzLdUbf5FctpxptBi40UvIrrmkz+g8x5IkorKQ=
 github.com/adrianriobo/gowinx v0.0.0-20210715122219-84ff0829329c/go.mod h1:cVDY+d4V1+LDY2BL0XLwsY5yXyxYf+e0NiNwnKJpQrk=
 github.com/agnivade/levenshtein v1.0.1/go.mod h1:CURSv5d9Uaml+FovSIICkLbAUZ9S4RqaHDIsdSBg7lM=
