@@ -75,12 +75,16 @@ func (u UXElement) GetFullName() string {
 }
 
 func (u UXElement) Click() error {
-	logging.Debug("Click on %s: %s", u.elementType, u.name)
-	position, err := win32waf.GetElementRect(u.ref.(*wa.IUIAutomationElement))
-	if err != nil {
-		return err
+	logging.Debug("Click on %s", u.GetFullName())
+	if u.elementType == CHECKBOX {
+		return wa.Invoke(u.ref.(*wa.IUIAutomationElement))
+	} else {
+		position, err := win32waf.GetElementRect(u.ref.(*wa.IUIAutomationElement))
+		if err != nil {
+			return err
+		}
+		return interaction.ClickOnRect(*position)
 	}
-	return interaction.ClickOnRect(*position)
 }
 
 func (u UXElement) GetElement(name string, elementType string) (*UXElement, error) {
@@ -127,11 +131,11 @@ func (u UXElement) GetAllChildren(elementType string) ([]*UXElement, error) {
 		var children []*UXElement
 		elements, err := win32waf.GetAllChildren(u.ref.(*wa.IUIAutomationElement), elementTypeId)
 		if err != nil {
-			return nil, fmt.Errorf("Error getting %s on parent %s with error %v", elementType, u.name, err)
+			return nil, fmt.Errorf("Error getting %s on parent %s with error %v", elementType, u.GetFullName(), err)
 		}
 		childrenCount, err := elements.Get_Length()
 		if err != nil {
-			return nil, fmt.Errorf("Error getting %s on parent %s with error %v", elementType, u.name, err)
+			return nil, fmt.Errorf("Error getting %s on parent %s with error %v", elementType, u.GetFullName(), err)
 		}
 		var i int32
 		for i = 0; i < childrenCount; i++ {

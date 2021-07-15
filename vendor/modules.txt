@@ -19,7 +19,7 @@ github.com/VividCortex/ewma
 # github.com/YourFin/binappend v0.0.0-20181105185800-0add4bf0b9ad
 ## explicit
 github.com/YourFin/binappend
-# github.com/adrianriobo/gowinx v0.0.0-20210714142148-5014663f0654
+# github.com/adrianriobo/gowinx v0.0.0-20210715122219-84ff0829329c
 ## explicit
 github.com/adrianriobo/gowinx/pkg/util
 github.com/adrianriobo/gowinx/pkg/util/logging
@@ -107,11 +107,9 @@ github.com/fsnotify/fsnotify
 # github.com/go-logr/logr v0.2.0
 github.com/go-logr/logr
 # github.com/go-ole/go-ole v1.2.5
-## explicit
 github.com/go-ole/go-ole
 github.com/go-ole/go-ole/oleutil
 # github.com/godbus/dbus/v5 v5.0.4
-## explicit
 github.com/godbus/dbus/v5
 # github.com/gofrs/uuid v3.2.0+incompatible
 github.com/gofrs/uuid
@@ -200,7 +198,6 @@ github.com/libvirt/libvirt-go-xml
 # github.com/linuxkit/virtsock v0.0.0-20180830132707-8e79449dea07
 github.com/linuxkit/virtsock/pkg/hvsock
 # github.com/magiconair/properties v1.8.5
-## explicit
 github.com/magiconair/properties
 # github.com/mattn/go-colorable v0.1.8
 ## explicit
@@ -220,7 +217,6 @@ github.com/miekg/dns
 # github.com/mitchellh/go-wordwrap v1.0.0
 github.com/mitchellh/go-wordwrap
 # github.com/mitchellh/mapstructure v1.4.1
-## explicit
 github.com/mitchellh/mapstructure
 # github.com/moby/term v0.0.0-20200312100748-672ec06f55cd
 github.com/moby/term
@@ -326,7 +322,6 @@ github.com/spf13/cast
 ## explicit
 github.com/spf13/cobra
 # github.com/spf13/jwalterweatherman v1.1.0
-## explicit
 github.com/spf13/jwalterweatherman
 # github.com/spf13/pflag v1.0.5
 ## explicit
@@ -422,7 +417,6 @@ golang.org/x/text/unicode/norm
 # golang.org/x/time v0.0.0-20200630173020-3af7569d3a1e
 golang.org/x/time/rate
 # google.golang.org/appengine v1.6.7
-## explicit
 google.golang.org/appengine/internal
 google.golang.org/appengine/internal/base
 google.golang.org/appengine/internal/datastore
@@ -469,7 +463,6 @@ gopkg.in/AlecAivazis/survey.v1/terminal
 # gopkg.in/inf.v0 v0.9.1
 gopkg.in/inf.v0
 # gopkg.in/ini.v1 v1.62.0
-## explicit
 gopkg.in/ini.v1
 # gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7
 gopkg.in/tomb.v1
