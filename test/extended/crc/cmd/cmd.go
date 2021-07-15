@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"runtime"
 	"time"
 
 	clicumber "github.com/code-ready/clicumber/testsuite"
@@ -60,9 +61,10 @@ func CheckCRCStatus(state string) error {
 
 func CheckCRCExecutableState(state string) error {
 	command := "which crc"
-	// Create a new shell session to reload envs
-	if err := clicumber.StartHostShellInstance(""); err != nil {
-		return err
+	if runtime.GOOS == "windows" {
+		if err := clicumber.ExecuteCommand("$env:Path = [System.Environment]::GetEnvironmentVariable(\"Path\",\"Machine\")"); err != nil {
+			return err
+		}
 	}
 	switch state {
 	case CRCExecutableInstalled:
