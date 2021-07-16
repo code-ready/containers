@@ -1,0 +1,2475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.14">
+<title>Getting Started Guide</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment @import statement to use as custom stylesheet */
+/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+abbr[title]{border-bottom:1px dotted}
+b,strong{font-weight:bold}
+dfn{font-style:italic}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,*::before,*::after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;word-wrap:anywhere;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{font-family:inherit;font-weight:400;font-size:1em;line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em;height:0}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+abbr,acronym{text-transform:uppercase;font-size:90%;color:rgba(0,0,0,.8);border-bottom:1px dotted #ddd;cursor:help}
+abbr{text-transform:none}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede;word-wrap:normal}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre).nobreak{word-wrap:normal}
+:not(pre).nowrap{white-space:nowrap}
+:not(pre).pre-wrap{white-space:pre-wrap}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:none;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:rgba(255,255,255,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details>summary:first-of-type{cursor:pointer;display:list-item;outline:none;margin-bottom:.75em}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:inherit}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border-style:solid;border-width:1px;border-color:#e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;-webkit-border-radius:4px;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border-style:solid;border-width:1px;border-color:#dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;-webkit-border-radius:4px;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{-webkit-border-radius:4px;border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class="highlight"],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;-webkit-border-radius:4px;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos{border-right:1px solid currentColor;opacity:.35;padding-right:.5em}
+pre.pygments .lineno{border-right:1px solid currentColor;opacity:.35;display:inline-block;margin-right:.75em}
+pre.pygments .lineno::before{content:"";margin-right:-.125em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;font-size:.85rem;text-align:left;margin-right:0}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content{margin-bottom:1.25em;word-wrap:anywhere}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>*>tr>*{border-width:1px}
+table.grid-cols>*>tr>*{border-width:0 1px}
+table.grid-rows>*>tr>*{border-width:1px 0}
+table.frame-all{border-width:1px}
+table.frame-ends{border-width:1px 0}
+table.frame-sides{border-width:0 1px}
+table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-child>*{border-top-width:0}
+table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
+table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
+table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
+table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+ul.checklist{margin-left:.625em}
+ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist li>p:first-child>input[type="checkbox"]:first-child{margin-right:.25em}
+ul.inline{display:-ms-flexbox;display:-webkit-box;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+td.hdlist2{word-wrap:anywhere}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
+.gist .file-data>table td.line-data{width:99%}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);-webkit-border-radius:50%;border-radius:50%;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#header,#content,#footnotes,#footer{max-width:none}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media print,amzn-kf8{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+<h1>Getting Started Guide</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#introducing-codeready-containers_gsg">1. Introducing Red&#160;Hat CodeReady Containers</a>
+<ul class="sectlevel2">
+<li><a href="#about-codeready-containers_gsg">1.1. About CodeReady Containers</a></li>
+<li><a href="#differences-from-production-openshift-install_gsg">1.2. Differences from a production OpenShift installation</a></li>
+</ul>
+</li>
+<li><a href="#installation_gsg">2. Installation</a>
+<ul class="sectlevel2">
+<li><a href="#minimum-system-requirements_gsg">2.1. Minimum system requirements</a>
+<ul class="sectlevel3">
+<li><a href="#minimum-system-requirements-hardware_gsg">2.1.1. Hardware requirements</a></li>
+<li><a href="#minimum-system-requirements-operating-system_gsg">2.1.2. Operating system requirements</a></li>
+</ul>
+</li>
+<li><a href="#required-software-packages_gsg">2.2. Required software packages for Linux</a></li>
+<li><a href="#installing-codeready-containers_gsg">2.3. Installing CodeReady Containers</a></li>
+<li><a href="#upgrading-codeready-containers_gsg">2.4. Upgrading CodeReady Containers</a></li>
+</ul>
+</li>
+<li><a href="#using-codeready-containers_gsg">3. Using CodeReady Containers</a>
+<ul class="sectlevel2">
+<li><a href="#setting-up-codeready-containers_gsg">3.1. Setting up CodeReady Containers</a></li>
+<li><a href="#starting-the-virtual-machine_gsg">3.2. Starting the virtual machine</a></li>
+<li><a href="#accessing-the-openshift-cluster_gsg">3.3. Accessing the OpenShift cluster</a>
+<ul class="sectlevel3">
+<li><a href="#accessing-the-openshift-web-console_gsg">3.3.1. Accessing the OpenShift web console</a></li>
+<li><a href="#accessing-the-openshift-cluster-with-oc_gsg">3.3.2. Accessing the OpenShift cluster with <code>oc</code></a></li>
+<li><a href="#accessing-the-internal-openshift-registry_gsg">3.3.3. Accessing the internal OpenShift registry</a></li>
+</ul>
+</li>
+<li><a href="#deploying-sample-application-with-odo_gsg">3.4. Deploying a sample application with <code>odo</code></a></li>
+<li><a href="#stopping-the-virtual-machine_gsg">3.5. Stopping the virtual machine</a></li>
+<li><a href="#deleting-the-virtual-machine_gsg">3.6. Deleting the virtual machine</a></li>
+</ul>
+</li>
+<li><a href="#configuring-codeready-containers_gsg">4. Configuring CodeReady Containers</a>
+<ul class="sectlevel2">
+<li><a href="#about-codeready-containers-configuration_gsg">4.1. About CodeReady Containers configuration</a></li>
+<li><a href="#viewing-codeready-containers-configuration_gsg">4.2. Viewing CodeReady Containers configuration</a></li>
+<li><a href="#configuring-the-virtual-machine_gsg">4.3. Configuring the virtual machine</a></li>
+</ul>
+</li>
+<li><a href="#networking_gsg">5. Networking</a>
+<ul class="sectlevel2">
+<li><a href="#dns-configuration_gsg">5.1. DNS configuration details</a>
+<ul class="sectlevel3">
+<li><a href="#dns-configuration-generalgsg">5.1.1. General DNS setup</a></li>
+<li><a href="#dns-configuration-linux_gsg">5.1.2. Linux</a></li>
+</ul>
+</li>
+<li><a href="#reserved-ip-subnets_gsg">5.2. Reserved IP subnets</a></li>
+<li><a href="#starting-codeready-containers-behind-proxy_gsg">5.3. Starting CodeReady Containers behind a proxy</a></li>
+<li><a href="#setting-up-remote-server_gsg">5.4. Setting up CodeReady Containers on a remote server</a></li>
+<li><a href="#connecting-to-remote-instance_gsg">5.5. Connecting to a remote CodeReady Containers instance</a></li>
+</ul>
+</li>
+<li><a href="#administrative-tasks_gsg">6. Administrative tasks</a>
+<ul class="sectlevel2">
+<li><a href="#starting-monitoring-alerting-telemetry_gsg">6.1. Starting Monitoring, Alerting, and Telemetry</a></li>
+</ul>
+</li>
+<li><a href="#troubleshooting-codeready-containers_gsg">7. Troubleshooting Red&#160;Hat CodeReady Containers</a>
+<ul class="sectlevel2">
+<li><a href="#getting-shell-access-to-the-openshift-cluster_gsg">7.1. Getting shell access to the OpenShift cluster</a></li>
+<li><a href="#troubleshooting-expired-certificates_gsg">7.2. Troubleshooting expired certificates</a></li>
+<li><a href="#troubleshooting-bundle-version-mismatch_gsg">7.3. Troubleshooting bundle version mismatch</a></li>
+<li><a href="#troubleshooting-unknown-issues_gsg">7.4. Troubleshooting unknown issues</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="introducing-codeready-containers_gsg"><a class="anchor" href="#introducing-codeready-containers_gsg"></a><a class="link" href="#introducing-codeready-containers_gsg">1. Introducing Red&#160;Hat CodeReady Containers</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="about-codeready-containers_gsg"><a class="anchor" href="#about-codeready-containers_gsg"></a><a class="link" href="#about-codeready-containers_gsg">1.1. About CodeReady Containers</a></h3>
+<div class="paragraph">
+<p>Red&#160;Hat CodeReady Containers brings a minimal OpenShift 4 cluster to your local computer.
+This cluster provides a minimal environment for development and testing purposes.
+CodeReady Containers is mainly targeted at running on developers' desktops.
+For other use cases, such as headless or multi-developer setups, use the <a href="https://cloud.redhat.com/openshift/install/">full OpenShift installer</a>.</p>
+</div>
+<div class="paragraph">
+<p>Refer to the <a href="https://docs.openshift.com/container-platform/latest/welcome/index.html#developer-activities">OpenShift documentation</a> for a full introduction to OpenShift.</p>
+</div>
+<div class="paragraph">
+<p>CodeReady Containers includes the <code class="command">crc</code> command-line interface (CLI) to interact with the CodeReady Containers virtual machine running the OpenShift cluster.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="differences-from-production-openshift-install_gsg"><a class="anchor" href="#differences-from-production-openshift-install_gsg"></a><a class="link" href="#differences-from-production-openshift-install_gsg">1.2. Differences from a production OpenShift installation</a></h3>
+<div class="paragraph">
+<p>Red&#160;Hat CodeReady Containers is a regular OpenShift installation with the following notable differences:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>The CodeReady Containers OpenShift cluster is ephemeral and is not intended for production use.</strong></p>
+</li>
+<li>
+<p>It uses a single node which behaves as both a master and worker node.</p>
+</li>
+<li>
+<p>It disables the <code>machine-config</code> and <code>monitoring</code> Operators by default.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>These disabled Operators cause the corresponding parts of the web console to be non-functional.</p>
+</li>
+<li>
+<p>For the same reason, there is no upgrade path to newer OpenShift versions.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The OpenShift instance runs in a virtual machine.
+This may cause other differences, particularly with external networking.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>CodeReady Containers also includes the following non-customizable cluster settings.
+These settings should not be modified:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Use of the <strong>*.crc.testing</strong> domain.</p>
+</li>
+<li>
+<p>The address range used for internal cluster communication.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The cluster uses the <strong>172</strong> address range.
+This can cause issues when, for example, a proxy is run in the same address space.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installation_gsg"><a class="anchor" href="#installation_gsg"></a><a class="link" href="#installation_gsg">2. Installation</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="minimum-system-requirements_gsg"><a class="anchor" href="#minimum-system-requirements_gsg"></a><a class="link" href="#minimum-system-requirements_gsg">2.1. Minimum system requirements</a></h3>
+<div class="paragraph">
+<p>CodeReady Containers has the following minimum hardware and operating system requirements.</p>
+</div>
+<div class="sect3">
+<h4 id="minimum-system-requirements-hardware_gsg"><a class="anchor" href="#minimum-system-requirements-hardware_gsg"></a><a class="link" href="#minimum-system-requirements-hardware_gsg">2.1.1. Hardware requirements</a></h4>
+<div class="paragraph">
+<p>CodeReady Containers requires the following system resources:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>4 physical CPU cores</p>
+</li>
+<li>
+<p>9 GB of free memory</p>
+</li>
+<li>
+<p>35 GB of storage space</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The OpenShift cluster requires these minimum resources to run in the CodeReady Containers virtual machine.
+Some workloads may require more resources.
+To assign more resources to the CodeReady Containers virtual machine, see <a href="https://code-ready.github.io/crc/#configuring-the-virtual-machine_gsg">Configuring the virtual machine</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="minimum-system-requirements-operating-system_gsg"><a class="anchor" href="#minimum-system-requirements-operating-system_gsg"></a><a class="link" href="#minimum-system-requirements-operating-system_gsg">2.1.2. Operating system requirements</a></h4>
+<div class="paragraph">
+<p>CodeReady Containers requires the following minimum version of a supported operating system:</p>
+</div>
+<div class="sect4">
+<h5 id="_microsoft_windows"><a class="anchor" href="#_microsoft_windows"></a><a class="link" href="#_microsoft_windows">Microsoft Windows</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>On Microsoft Windows, CodeReady Containers requires the Windows 10 Fall Creators Update (version 1709) or newer.
+CodeReady Containers does not work on earlier versions of Microsoft Windows.
+Microsoft Windows 10 Home Edition is not supported.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_macos"><a class="anchor" href="#_macos"></a><a class="link" href="#_macos">macOS</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>On macOS, CodeReady Containers requires macOS 10.14 Mojave or newer.
+CodeReady Containers does not work on earlier versions of macOS.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_linux"><a class="anchor" href="#_linux"></a><a class="link" href="#_linux">Linux</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p>On Linux, CodeReady Containers is only supported on Red&#160;Hat Enterprise&#160;Linux/CentOS 7.5 or newer (including 8.x versions) and on the latest two stable Fedora releases.</p>
+</li>
+<li>
+<p>When using Red&#160;Hat Enterprise&#160;Linux, the machine running CodeReady Containers must be <a href="https://access.redhat.com/solutions/253273">registered with the Red Hat Customer Portal</a>.</p>
+</li>
+<li>
+<p>Ubuntu 18.04 LTS or newer and Debian 10 or newer are not officially supported and may require manual set up of the host machine.</p>
+</li>
+<li>
+<p>See <a href="https://code-ready.github.io/crc/#required-software-packages_gsg">Required software packages</a> to install the required packages for your Linux distribution.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="required-software-packages_gsg"><a class="anchor" href="#required-software-packages_gsg"></a><a class="link" href="#required-software-packages_gsg">2.2. Required software packages for Linux</a></h3>
+<div class="paragraph">
+<p>CodeReady Containers requires the <code>libvirt</code> and <code>NetworkManager</code> packages to run on Linux.
+Consult the following table to find the command used to install these packages for your Linux distribution:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Package installation commands by distribution</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Linux Distribution</th>
+<th class="tableblock halign-left valign-top">Installation command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fedora</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sudo dnf install NetworkManager</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Red&#160;Hat Enterprise&#160;Linux/CentOS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>su -c 'yum install NetworkManager'</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Debian/Ubuntu</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sudo apt install qemu-kvm libvirt-daemon libvirt-daemon-system network-manager</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="installing-codeready-containers_gsg"><a class="anchor" href="#installing-codeready-containers_gsg"></a><a class="link" href="#installing-codeready-containers_gsg">2.3. Installing CodeReady Containers</a></h3>
+<div class="paragraph">
+<p>CodeReady Containers is available as a portable executable for Red&#160;Hat Enterprise&#160;Linux and Microsoft Windows.
+On macOS, CodeReady Containers is available using a guided installer.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>Your host machine must meet the minimum system requirements.
+For more information, see <a href="https://code-ready.github.io/crc/#minimum-system-requirements_gsg">Minimum system requirements</a>.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Download the <a href="https://cloud.redhat.com/openshift/create/local">latest release of CodeReady Containers</a> for your platform.</p>
+</li>
+<li>
+<p>On macOS, run the guided installer and follow the instructions.
+On Red&#160;Hat Enterprise&#160;Linux or Microsoft Windows, assuming the archive is in the <strong class="filename"><em>~/Downloads</em></strong> directory, follow the procedure for your platform.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For Red&#160;Hat Enterprise&#160;Linux:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Extract the contents of the archive:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ cd ~/Downloads
+$ tar xvf crc-linux-amd64.tar.xz</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create the <strong class="filename"><em>~/bin</em></strong> directory if it does not exist and copy the <code class="command">crc</code> executable to it:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ mkdir -p ~/bin
+$ cp ~/Downloads/crc-linux-*-amd64/crc ~/bin</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Add the <strong class="filename"><em>~/bin</em></strong> directory to your <code><em>PATH</em></code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ export PATH=$PATH:$HOME/bin
+$ echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>For Microsoft Windows:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Extract the contents of the archive.</p>
+</li>
+<li>
+<p>Create the desired directory path for CodeReady Containers and copy the extracted <code class="command">crc.exe</code> executable to it.</p>
+</li>
+<li>
+<p>Add the directory path to your <code><em>PATH</em></code> environment variable.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>On Microsoft Windows, you must execute the CodeReady Containers executable from your local <strong class="filename"><em>C:\</em></strong> drive.
+You cannot run CodeReady Containers from a network drive.</p>
+</div>
+<div class="paragraph">
+<p>If you cannot install the executable in your <code><em>PATH</em></code>, run CodeReady Containers from the current directory as <code>./crc.exe</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="upgrading-codeready-containers_gsg"><a class="anchor" href="#upgrading-codeready-containers_gsg"></a><a class="link" href="#upgrading-codeready-containers_gsg">2.4. Upgrading CodeReady Containers</a></h3>
+<div class="paragraph">
+<p>Newer versions of the CodeReady Containers executable require manual set up to prevent potential incompatibilities with earlier versions.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p><a href="https://cloud.redhat.com/openshift/create/local">Download the latest release of CodeReady Containers</a>.</p>
+</li>
+<li>
+<p>Delete the existing CodeReady Containers virtual machine:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc delete</pre>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code class="command">crc delete</code> command results in the loss of data stored in the CodeReady Containers virtual machine.
+Save any desired information stored in the virtual machine before running this command.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Replace the earlier <code class="command">crc</code> executable with the executable of the latest release.
+Verify that the new <code class="command">crc</code> executable is in use by checking its version:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc version</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Set up the new CodeReady Containers release:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc setup</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Start the new CodeReady Containers virtual machine:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc start</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="using-codeready-containers_gsg"><a class="anchor" href="#using-codeready-containers_gsg"></a><a class="link" href="#using-codeready-containers_gsg">3. Using CodeReady Containers</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="setting-up-codeready-containers_gsg"><a class="anchor" href="#setting-up-codeready-containers_gsg"></a><a class="link" href="#setting-up-codeready-containers_gsg">3.1. Setting up CodeReady Containers</a></h3>
+<div class="paragraph">
+<p>The <code class="command">crc setup</code> command performs operations to set up the environment of your host machine for the CodeReady Containers virtual machine.</p>
+</div>
+<div class="paragraph">
+<p>This procedure will create the <code class="filename">~/.crc</code> directory if it does not already exist.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>On Linux or macOS, ensure that your user account has permission to use the <code class="command">sudo</code> command.
+On Microsoft Windows, ensure that your user account can elevate to Administrator privileges.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Do not run the <code class="command">crc</code> executable as <code>root</code> (or Administrator).
+Always run the <code class="command">crc</code> executable with your user account.</p>
+</li>
+<li>
+<p>If you are setting up a new version, capture any changes made to the virtual machine before setting up a new CodeReady Containers release.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Set up your host machine for CodeReady Containers:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc setup</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Consent for telemetry data collection</div>
+<p>The <code>crc setup</code> command prompts you for optional, anonymous usage data collection to assist with development.
+No personally identifiable information is collected.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To manually enable telemetry, run the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc config set consent-telemetry yes</pre>
+</div>
+</div>
+</li>
+<li>
+<p>To manually disable telemetry, run the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc config set consent-telemetry no</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For more information about collected data, see the Red&#160;Hat <a href="https://developers.redhat.com/article/tool-data-collection">Telemetry data collection notice</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="starting-the-virtual-machine_gsg"><a class="anchor" href="#starting-the-virtual-machine_gsg"></a><a class="link" href="#starting-the-virtual-machine_gsg">3.2. Starting the virtual machine</a></h3>
+<div class="paragraph">
+<p>The <code class="command">crc start</code> command starts the CodeReady Containers virtual machine and OpenShift cluster.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>To avoid networking-related issues, ensure that you are not connected to a VPN and that your network connection is reliable.</p>
+</li>
+<li>
+<p>You set up the host machine through the <code class="command">crc setup</code> command.
+For more information, see <a href="https://code-ready.github.io/crc/#setting-up-codeready-containers_gsg">Setting up CodeReady Containers</a>.</p>
+</li>
+<li>
+<p>On Microsoft Windows, ensure that your user account can elevate to Administrator privileges.</p>
+</li>
+<li>
+<p>You have a valid OpenShift user pull secret.
+Copy or download the pull secret from the Pull Secret section of the <a href="https://cloud.redhat.com/openshift/create/local">Install on Laptop: Red&#160;Hat CodeReady Containers</a> page on cloud.redhat.com.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Accessing the user pull secret requires a Red Hat account.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Start the CodeReady Containers virtual machine:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc start</pre>
+</div>
+</div>
+</li>
+<li>
+<p>When prompted, supply your user pull secret.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The cluster takes a minimum of four minutes to start the necessary containers and Operators before serving a request.</p>
+</li>
+<li>
+<p>If you see errors during <code class="command">crc start</code>, check the <a href="https://code-ready.github.io/crc/#troubleshooting-codeready-containers_gsg">Troubleshooting CodeReady Containers</a> section for potential solutions.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p>To change the default resources allocated to the virtual machine, see <a href="https://code-ready.github.io/crc/#configuring-the-virtual-machine_gsg">Configuring the virtual machine</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="accessing-the-openshift-cluster_gsg"><a class="anchor" href="#accessing-the-openshift-cluster_gsg"></a><a class="link" href="#accessing-the-openshift-cluster_gsg">3.3. Accessing the OpenShift cluster</a></h3>
+<div class="paragraph">
+<p>Access the OpenShift cluster running in the CodeReady Containers virtual machine through the OpenShift web console or client executable (<code class="command">oc</code>).</p>
+</div>
+<div class="sect3">
+<h4 id="accessing-the-openshift-web-console_gsg"><a class="anchor" href="#accessing-the-openshift-web-console_gsg"></a><a class="link" href="#accessing-the-openshift-web-console_gsg">3.3.1. Accessing the OpenShift web console</a></h4>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>A running CodeReady Containers virtual machine.
+For more information, see <a href="https://code-ready.github.io/crc/#starting-the-virtual-machine_gsg">Starting the virtual machine</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<div class="title">Procedure</div>
+<p>To access the OpenShift web console, follow these steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Run <code class="command">crc console</code>.
+This will open your web browser and direct it to the web console.</p>
+</li>
+<li>
+<p>Log in as the <code>developer</code> user with the password printed in the output of the <code class="command">crc start</code> command.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>You can also view the password for the <code>developer</code> and <code>kubeadmin</code> users by running <code class="command">crc console --credentials</code>.</p>
+</li>
+<li>
+<p>You can initially access the cluster through either the <code>kubeadmin</code> or <code>developer</code> user.
+Use the <code>developer</code> user for creating projects or OpenShift applications and for application deployment.
+Only use the <code>kubeadmin</code> user for administrative tasks such as creating new users, setting roles, and so on.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>See <a href="https://code-ready.github.io/crc/#troubleshooting-codeready-containers_gsg">Troubleshooting CodeReady Containers</a> if you cannot access the CodeReady Containers OpenShift cluster.</p>
+</div>
+<div class="ulist">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p>The <a href="https://docs.openshift.com/container-platform/latest/applications/projects/working-with-projects.html">OpenShift documentation</a> covers the creation of projects and applications.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="accessing-the-openshift-cluster-with-oc_gsg"><a class="anchor" href="#accessing-the-openshift-cluster-with-oc_gsg"></a><a class="link" href="#accessing-the-openshift-cluster-with-oc_gsg">3.3.2. Accessing the OpenShift cluster with <code>oc</code></a></h4>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>A running CodeReady Containers virtual machine.
+For more information, see <a href="https://code-ready.github.io/crc/#starting-the-virtual-machine_gsg">Starting the virtual machine</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<div class="title">Procedure</div>
+<p>To access the OpenShift cluster through the <code class="command">oc</code> command, follow these steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Run the <code class="command">crc oc-env</code> command to print the command needed to add the cached <code class="command">oc</code> executable to your <code><em>PATH</em></code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc oc-env</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run the printed command.</p>
+</li>
+<li>
+<p>Log in as the <code>developer</code> user:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ oc login -u developer https://api.crc.testing:6443</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code class="command">crc start</code> command prints the password for the <code>developer</code> user.
+You can also view it by running the <code class="command">crc console --credentials</code> command.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>You can now use <code class="command">oc</code> to interact with your OpenShift cluster.
+For example, to verify that the OpenShift cluster Operators are available, you need to be logged in as <code>kubeadmin</code> user and
+run the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">$ oc config use-context crc-admin
+$ oc whoami
+kubeadmin
+$ oc get co</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>CodeReady Containers disables the <code>machine-config</code> and <code>monitoring</code> Operators by default.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>See <a href="https://code-ready.github.io/crc/#troubleshooting-codeready-containers_gsg">Troubleshooting CodeReady Containers</a> if you cannot access the CodeReady Containers OpenShift cluster.</p>
+</div>
+<div class="ulist">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p>The <a href="https://docs.openshift.com/container-platform/latest/applications/projects/working-with-projects.html">OpenShift documentation</a> covers the creation of projects and applications.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="accessing-the-internal-openshift-registry_gsg"><a class="anchor" href="#accessing-the-internal-openshift-registry_gsg"></a><a class="link" href="#accessing-the-internal-openshift-registry_gsg">3.3.3. Accessing the internal OpenShift registry</a></h4>
+<div class="paragraph">
+<p>The OpenShift cluster running in the CodeReady Containers virtual machine includes an internal container image registry by default.
+This internal container image registry can be used as a publication target for locally developed container images.
+To access the internal OpenShift registry, follow these steps.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>A running CodeReady Containers virtual machine.
+For more information, see <a href="https://code-ready.github.io/crc/#starting-the-virtual-machine_gsg">Starting the virtual machine</a>.</p>
+</li>
+<li>
+<p>A working <code class="command">oc</code> command.
+For more information, see <a href="https://code-ready.github.io/crc/#accessing-the-openshift-cluster-with-oc_gsg">Accessing the OpenShift cluster with <code>oc</code></a>.</p>
+</li>
+<li>
+<p>An installation of <code class="command">podman</code> or <code class="command">docker</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For Docker, add <code>default-route-openshift-image-registry.apps-crc.testing</code> as an insecure registry.
+For more information, see <a href="https://docs.docker.com/registry/insecure/">the Docker documentation</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Check which user is logged in to the cluster:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ oc whoami</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>For demonstration purposes, the current user is assumed to be <code>kubeadmin</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Log in to the registry as that user with its token:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ podman login -u kubeadmin -p $(oc whoami -t) default-route-openshift-image-registry.apps-crc.testing --tls-verify=false</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create a new project:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ oc new-project demo</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Pull an example container image:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ podman pull quay.io/libpod/alpine</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Tag the image, including namespace details:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ podman tag alpine:latest default-route-openshift-image-registry.apps-crc.testing/demo/alpine:latest</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Push the container image to the internal registry:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ podman push default-route-openshift-image-registry.apps-crc.testing/demo/alpine:latest --tls-verify=false</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get imagestreams and verify that the pushed image is listed:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ oc get is</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Enable image lookup in the imagestream:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ oc set image-lookup alpine</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This setting allows the imagestream to be the source of images without having to provide the full URL to the internal registry.</p>
+</div>
+</li>
+<li>
+<p>Create a pod using the recently pushed image:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ oc run demo --image=alpine --command -- sleep 600s</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deploying-sample-application-with-odo_gsg"><a class="anchor" href="#deploying-sample-application-with-odo_gsg"></a><a class="link" href="#deploying-sample-application-with-odo_gsg">3.4. Deploying a sample application with <code>odo</code></a></h3>
+<div class="paragraph">
+<p>You can use <code class="command">odo</code> to create OpenShift projects and applications from the command line.
+This procedure deploys a sample application to the OpenShift cluster running in the CodeReady Containers virtual machine.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You have installed <code class="command">odo</code>.
+For more information, see <a href="https://docs.openshift.com/container-platform/latest/cli_reference/developer_cli_odo/installing-odo.html">Installing <code>odo</code></a> in the <code class="command">odo</code> documentation.</p>
+</li>
+<li>
+<p>The CodeReady Containers virtual machine is running.
+For more information, see <a href="https://code-ready.github.io/crc/#starting-the-virtual-machine_gsg">Starting the virtual machine</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<div class="title">Procedure</div>
+<p>To deploy a sample application through <code class="command">odo</code>, follow these steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in to the running CodeReady Containers OpenShift cluster as the <code>developer</code> user:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ odo login -u developer -p developer</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create a project for your application:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ odo project create sample-app</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create a directory for your components:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ mkdir sample-app
+$ cd sample-app</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create a component from a sample application on GitHub:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ odo create nodejs --s2i --git https://github.com/openshift/nodejs-ex</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Creating a component from a remote Git repository will rebuild the application each time you run the <code class="command">odo push</code> command.
+To create a component from a local Git repository, see <a href="https://docs.openshift.com/container-platform/latest/cli_reference/developer_cli_odo/creating_and_deploying_applications_with_odo/creating-a-single-component-application-with-odo.html">Creating a single-component application with <code>odo</code></a> in the <code class="command">odo</code> documentation.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Create a URL and add an entry to the local configuration file:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ odo url create --port 8080</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Push the changes:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ odo push</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Your component is now deployed to the cluster with an accessible URL.</p>
+</div>
+</li>
+<li>
+<p>List the URLs and check the desired URL for the component:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ odo url list</pre>
+</div>
+</div>
+</li>
+<li>
+<p>View the deployed application using the generated URL.</p>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p>For more information about using <code class="command">odo</code>, see the <a href="https://docs.openshift.com/container-platform/latest/cli_reference/developer_cli_odo/understanding-odo.html"><code>odo</code> documentation</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="stopping-the-virtual-machine_gsg"><a class="anchor" href="#stopping-the-virtual-machine_gsg"></a><a class="link" href="#stopping-the-virtual-machine_gsg">3.5. Stopping the virtual machine</a></h3>
+<div class="paragraph">
+<p>The <code class="command">crc stop</code> command stops the running CodeReady Containers virtual machine and OpenShift cluster.
+The stopping process will take a few minutes while the cluster shuts down.</p>
+</div>
+<div class="ulist">
+<div class="title">Procedure</div>
+<ul>
+<li>
+<p>Stop the CodeReady Containers virtual machine and OpenShift cluster:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc stop</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-the-virtual-machine_gsg"><a class="anchor" href="#deleting-the-virtual-machine_gsg"></a><a class="link" href="#deleting-the-virtual-machine_gsg">3.6. Deleting the virtual machine</a></h3>
+<div class="paragraph">
+<p>The <code class="command">crc delete</code> command deletes an existing CodeReady Containers virtual machine.</p>
+</div>
+<div class="ulist">
+<div class="title">Procedure</div>
+<ul>
+<li>
+<p>Delete the CodeReady Containers virtual machine:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc delete</pre>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code class="command">crc delete</code> command results in the loss of data stored in the CodeReady Containers virtual machine.
+Save any desired information stored in the virtual machine before running this command.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configuring-codeready-containers_gsg"><a class="anchor" href="#configuring-codeready-containers_gsg"></a><a class="link" href="#configuring-codeready-containers_gsg">4. Configuring CodeReady Containers</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="about-codeready-containers-configuration_gsg"><a class="anchor" href="#about-codeready-containers-configuration_gsg"></a><a class="link" href="#about-codeready-containers-configuration_gsg">4.1. About CodeReady Containers configuration</a></h3>
+<div class="paragraph">
+<p>Use the <code class="command">crc config</code> command to configure both the <code class="command">crc</code> executable and the CodeReady Containers virtual machine.
+The <code class="command">crc config</code> command requires a subcommand to act on the configuration.
+The available subcommands are <code>get</code>, <code>set,</code> <code>unset</code>, and <code>view</code>.
+The <code>get</code>, <code>set</code>, and <code>unset</code> subcommands operate on named configurable properties.
+Run the <code class="command">crc config --help</code> command to list the available properties.</p>
+</div>
+<div class="paragraph">
+<p>You can also use the <code class="command">crc config</code> command to configure the behavior of the startup checks for the <code class="command">crc start</code> and <code class="command">crc setup</code> commands.
+By default, startup checks report an error and stop execution when their conditions are not met.
+Set the value of a property starting with <code>skip-check</code> to <code>true</code> to skip the check.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-codeready-containers-configuration_gsg"><a class="anchor" href="#viewing-codeready-containers-configuration_gsg"></a><a class="link" href="#viewing-codeready-containers-configuration_gsg">4.2. Viewing CodeReady Containers configuration</a></h3>
+<div class="paragraph">
+<p>The CodeReady Containers executable provides commands to view configurable properties and the current CodeReady Containers configuration.</p>
+</div>
+<div class="ulist">
+<div class="title">Procedure</div>
+<ul>
+<li>
+<p>To view the available configurable properties:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc config --help</pre>
+</div>
+</div>
+</li>
+<li>
+<p>To view the values for a configurable property:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc config get <em>&lt;property&gt;</em></pre>
+</div>
+</div>
+</li>
+<li>
+<p>To view the complete current configuration:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc config view</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code class="command">crc config view</code> command does not return any information if the configuration consists of default values.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="configuring-the-virtual-machine_gsg"><a class="anchor" href="#configuring-the-virtual-machine_gsg"></a><a class="link" href="#configuring-the-virtual-machine_gsg">4.3. Configuring the virtual machine</a></h3>
+<div class="paragraph">
+<p>Use the <code>cpus</code> and <code>memory</code> properties to configure the default number of vCPUs and amount of memory available to the CodeReady Containers virtual machine, respectively.</p>
+</div>
+<div class="paragraph">
+<p>Alternatively, the number of vCPUs and amount of memory can be assigned using the <code>--cpus</code> and <code>--memory</code> flags to the <code>crc start</code> command, respectively.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You cannot change the configuration of a running CodeReady Containers virtual machine.
+To enable configuration changes, you must stop the running virtual machine and start it again.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<div class="title">Procedure</div>
+<ul>
+<li>
+<p>To configure the number of vCPUs available to the virtual machine:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc config set cpus <em>&lt;number&gt;</em></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The default value for the <code>cpus</code> property is <code>4</code>.
+The number of vCPUs to assign must be greater than or equal to the default.</p>
+</div>
+</li>
+<li>
+<p>To start the virtual machine with the desired number of vCPUs:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc start --cpus <em>&lt;number&gt;</em></pre>
+</div>
+</div>
+</li>
+<li>
+<p>To configure the memory available to the virtual machine:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc config set memory <em>&lt;number-in-mib&gt;</em></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Values for available memory are set in mebibytes (MiB).
+One gibibyte (GiB) of memory is equal to 1024 MiB.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The default value for the <code>memory</code> property is <code>9216</code>.
+The amount of memory to assign must be greater than or equal to the default.</p>
+</div>
+</li>
+<li>
+<p>To start the virtual machine with the desired amount of memory:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc start --memory <em>&lt;number-in-mib&gt;</em></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="networking_gsg"><a class="anchor" href="#networking_gsg"></a><a class="link" href="#networking_gsg">5. Networking</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="dns-configuration_gsg"><a class="anchor" href="#dns-configuration_gsg"></a><a class="link" href="#dns-configuration_gsg">5.1. DNS configuration details</a></h3>
+<div class="sect3">
+<h4 id="dns-configuration-generalgsg"><a class="anchor" href="#dns-configuration-generalgsg"></a><a class="link" href="#dns-configuration-generalgsg">5.1.1. General DNS setup</a></h4>
+<div class="paragraph">
+<p>The OpenShift cluster managed by CodeReady Containers uses 2 DNS domain names, <code>crc.testing</code> and <code>apps-crc.testing</code>.
+The <code>crc.testing</code> domain is for core OpenShift services.
+The <code>apps-crc.testing</code> domain is for accessing OpenShift applications deployed on the cluster.</p>
+</div>
+<div class="paragraph">
+<p>For example, the OpenShift API server will be exposed as <code>api.crc.testing</code> while the OpenShift console is accessed through <code>console-openshift-console.apps-crc.testing</code>.
+These DNS domains are served by a <code>dnsmasq</code> DNS container running inside the CodeReady Containers virtual machine.</p>
+</div>
+<div class="paragraph">
+<p>Running <code class="command">crc setup</code> will detect and adjust your system DNS configuration so that it can resolve these domains.
+Additional checks are done to verify DNS is properly configured when running <code class="command">crc start</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="dns-configuration-linux_gsg"><a class="anchor" href="#dns-configuration-linux_gsg"></a><a class="link" href="#dns-configuration-linux_gsg">5.1.2. Linux</a></h4>
+<div class="paragraph">
+<p>On Linux, depending on your distribution, CodeReady Containers expects the following DNS configuration:</p>
+</div>
+<div class="sect4">
+<h5 id="_networkmanager_systemd_resolved"><a class="anchor" href="#_networkmanager_systemd_resolved"></a><a class="link" href="#_networkmanager_systemd_resolved">NetworkManager + systemd-resolved</a></h5>
+<div class="paragraph">
+<p>This configuration is used by default on Fedora 33 or newer, and on Ubuntu Desktop editions.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>CodeReady Containers expects NetworkManager to manage networking.</p>
+</li>
+<li>
+<p>CodeReady Containers configures <code>systemd-resolved</code> to forward requests for the <code>testing</code> domain to the <code>192.168.130.11</code> DNS server.
+<code>192.168.130.11</code> is the IP of the CodeReady Containers virtual machine.</p>
+</li>
+<li>
+<p><code>systemd-resolved</code> configuration is done through a NetworkManager dispatcher script in <code>/etc/NetworkManager/dispatcher.d/99-crc.sh</code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre>#!/bin/sh
+
+export LC_ALL=C
+
+systemd-resolve --interface crc --set-dns 192.168.130.11 --set-domain ~testing
+
+exit 0</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><code>systemd-resolved</code> is also available as an unsupported Technology Preview on Red&#160;Hat Enterprise&#160;Linux and CentOS 8.3.
+After <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_networking/using-different-dns-servers-for-different-domains_configuring-and-managing-networking">configuring the host</a> to use <code>systemd-resolved</code>, stop any running clusters and rerun <code class="command">crc setup</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_networkmanager_dnsmasq"><a class="anchor" href="#_networkmanager_dnsmasq"></a><a class="link" href="#_networkmanager_dnsmasq">NetworkManager + dnsmasq</a></h5>
+<div class="paragraph">
+<p>This configuration is used by default on Fedora 32 or older, on Red&#160;Hat Enterprise&#160;Linux, and on CentOS.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>CodeReady Containers expects NetworkManager to manage networking.</p>
+</li>
+<li>
+<p>NetworkManager uses <code>dnsmasq</code> through the <code class="filename">/etc/NetworkManager/conf.d/crc-nm-dnsmasq.conf</code> configuration file.</p>
+</li>
+<li>
+<p>The configuration file for this <code>dnsmasq</code> instance is <code class="filename">/etc/NetworkManager/dnsmasq.d/crc.conf</code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre>server=/crc.testing/192.168.130.11
+server=/apps-crc.testing/192.168.130.11</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The NetworkManager <code>dnsmasq</code> instance forwards requests for the <code>crc.testing</code> and <code>apps-crc.testing</code> domains to the <code>192.168.130.11</code> DNS server.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="reserved-ip-subnets_gsg"><a class="anchor" href="#reserved-ip-subnets_gsg"></a><a class="link" href="#reserved-ip-subnets_gsg">5.2. Reserved IP subnets</a></h3>
+<div class="paragraph">
+<p>The CodeReady Containers OpenShift cluster reserves IP subnets for internal use which should not collide with your host network.
+Ensure that the following IP subnets are available for use:</p>
+</div>
+<div class="ulist">
+<div class="title">Reserved IP subnets</div>
+<ul>
+<li>
+<p><code>10.217.0.0/22</code></p>
+</li>
+<li>
+<p><code>10.217.4.0/23</code></p>
+</li>
+<li>
+<p><code>192.168.126.0/24</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Additionally, the host hypervisor may reserve another IP subnet depending on the host operating system.
+On Microsoft Windows, the hypervisor reserves a randomly generated IP subnet that cannot be determined ahead-of-time.
+No additional subnet is reserved on macOS.
+The additional reserved subnet for Linux is <code>192.168.130.0/24</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="starting-codeready-containers-behind-proxy_gsg"><a class="anchor" href="#starting-codeready-containers-behind-proxy_gsg"></a><a class="link" href="#starting-codeready-containers-behind-proxy_gsg">5.3. Starting CodeReady Containers behind a proxy</a></h3>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>To use an existing <code class="command">oc</code> executable on your host machine, export the <code>.testing</code> domain as part of the <code>no_proxy</code> environment variable.</p>
+</li>
+<li>
+<p>The embedded <code class="command">oc</code> executable does not require manual settings.
+For more information about using the embedded <code class="command">oc</code> executable, see <a href="https://code-ready.github.io/crc/#accessing-the-openshift-cluster-with-oc_gsg">Accessing the OpenShift cluster with <code>oc</code></a>.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Define a proxy using the <code>http_proxy</code> and <code>https_proxy</code> environment variables or using the <code class="command">crc config set</code> command as follows:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc config set http-proxy http://proxy.example.com:<em>&lt;port&gt;</em>
+$ crc config set https-proxy http://proxy.example.com:<em>&lt;port&gt;</em>
+$ crc config set no-proxy <em>&lt;comma-separated-no-proxy-entries&gt;</em></pre>
+</div>
+</div>
+</li>
+<li>
+<p>If the proxy uses a custom CA certificate file, set it as follows:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc config set proxy-ca-file <em>&lt;path-to-custom-ca-file&gt;</em></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The <code class="command">crc</code> executable will be able to use the defined proxy once set through environment variables or CodeReady Containers configuration.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Proxy-related values set in the configuration for CodeReady Containers have priority over values set through environment variables.</p>
+</li>
+<li>
+<p>SOCKS proxies are not supported by OpenShift Container Platform.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="setting-up-remote-server_gsg"><a class="anchor" href="#setting-up-remote-server_gsg"></a><a class="link" href="#setting-up-remote-server_gsg">5.4. Setting up CodeReady Containers on a remote server</a></h3>
+<div class="paragraph">
+<p>Follow this procedure to configure a remote server to run a CodeReady Containers OpenShift cluster.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>It is strongly advised to perform this procedure on a local network.</strong>
+Exposing an insecure server on the internet comes with many security implications.</p>
+</li>
+<li>
+<p>All of the commands in this procedure must be run on the remote server.</p>
+</li>
+<li>
+<p>This procedure assumes the use of a Red&#160;Hat Enterprise&#160;Linux, Fedora, or CentOS server.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>CodeReady Containers is installed and set up on the remote server.
+For more information, see <a href="https://code-ready.github.io/crc/#installing-codeready-containers_gsg">Installing CodeReady Containers</a> and <a href="https://code-ready.github.io/crc/#setting-up-codeready-containers_gsg">Setting up CodeReady Containers</a>.</p>
+</li>
+<li>
+<p>Your user account has <code>sudo</code> permissions on the remote server.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Start the cluster:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc start</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ensure that the cluster remains running throughout this procedure.</p>
+</div>
+</li>
+<li>
+<p>Install the <code class="package">haproxy</code> package and other utilities:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ sudo dnf install haproxy /usr/sbin/semanage</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Modify the firewall to allow communication with the cluster:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ sudo systemctl start firewalld
+$ sudo firewall-cmd --add-port=80/tcp --permanent
+$ sudo firewall-cmd --add-port=6443/tcp --permanent
+$ sudo firewall-cmd --add-port=443/tcp --permanent
+$ sudo systemctl restart firewalld</pre>
+</div>
+</div>
+</li>
+<li>
+<p>For SELinux, allow listening to TCP port 6443:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ sudo semanage port -a -t http_port_t -p tcp 6443</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create a backup of the default <code class="application">haproxy</code> configuration:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ sudo cp /etc/haproxy/haproxy.cfg{,.bak}</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Configure <code class="application">haproxy</code> for use with the cluster:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ export CRC_IP=$(crc ip)
+$ sudo tee /etc/haproxy/haproxy.cfg &amp;&gt;/dev/null &lt;&lt;EOF
+global
+    log /dev/log local0
+
+defaults
+    balance roundrobin
+    log global
+    maxconn 100
+    mode tcp
+    timeout connect 5s
+    timeout client 500s
+    timeout server 500s
+
+listen apps
+    bind 0.0.0.0:80
+    server crcvm $CRC_IP:80 check
+
+listen apps_ssl
+    bind 0.0.0.0:443
+    server crcvm $CRC_IP:443 check
+
+listen api
+    bind 0.0.0.0:6443
+    server crcvm $CRC_IP:6443 check
+EOF</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Start the <code class="application">haproxy</code> service:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ sudo systemctl start haproxy</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="connecting-to-remote-instance_gsg"><a class="anchor" href="#connecting-to-remote-instance_gsg"></a><a class="link" href="#connecting-to-remote-instance_gsg">5.5. Connecting to a remote CodeReady Containers instance</a></h3>
+<div class="paragraph">
+<p>Follow this procedure to connect a client machine to a remote server running a CodeReady Containers OpenShift cluster.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>It is strongly advised to connect to a server that is only exposed on your local network.</strong></p>
+</li>
+<li>
+<p>All of the commands in this procedure must be run on the client.</p>
+</li>
+<li>
+<p>This procedure assumes the use of a Red&#160;Hat Enterprise&#160;Linux, Fedora, or CentOS client.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>A remote server is set up for the client to connect to.
+For more information, see <a href="https://code-ready.github.io/crc/#setting-up-remote-server_gsg">Setting up CodeReady Containers on a remote server</a>.</p>
+</li>
+<li>
+<p>NetworkManager is installed and running.</p>
+</li>
+<li>
+<p>You know the external IP address of the server.</p>
+</li>
+<li>
+<p>You have the <a href="https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/">latest OpenShift client executable (<code class="command">oc</code>)</a> in your <code>$PATH</code> on the client.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Install the <code class="package">dnsmasq</code> package:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ sudo dnf install dnsmasq</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Enable the use of <code class="application">dnsmasq</code> for DNS resolution in NetworkManager:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ sudo tee /etc/NetworkManager/conf.d/use-dnsmasq.conf &amp;&gt;/dev/null &lt;&lt;EOF
+[main]
+dns=dnsmasq
+EOF</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Add DNS entries for CodeReady Containers to the <code class="application">dnsmasq</code> configuration:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ sudo tee /etc/NetworkManager/dnsmasq.d/external-crc.conf &amp;&gt;/dev/null &lt;&lt;EOF
+address=/apps-crc.testing/<em>SERVER_IP_ADDRESS</em>
+address=/api.crc.testing/<em>SERVER_IP_ADDRESS</em>
+EOF</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Comment out any existing entries in <code>/etc/NetworkManager/dnsmasq.d/crc.conf</code>.
+These entries are created by running a local instance of CodeReady Containers and will conflict with the entries for the remote cluster.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Reload the NetworkManager service:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ sudo systemctl reload NetworkManager</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Log in to the remote cluster as the <code>developer</code> user with <code class="command">oc</code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ oc login -u developer -p developer https://api.crc.testing:6443</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The remote OpenShift Web Console is available at https://console-openshift-console.apps-crc.testing.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="administrative-tasks_gsg"><a class="anchor" href="#administrative-tasks_gsg"></a><a class="link" href="#administrative-tasks_gsg">6. Administrative tasks</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="starting-monitoring-alerting-telemetry_gsg"><a class="anchor" href="#starting-monitoring-alerting-telemetry_gsg"></a><a class="link" href="#starting-monitoring-alerting-telemetry_gsg">6.1. Starting Monitoring, Alerting, and Telemetry</a></h3>
+<div class="paragraph">
+<p>To make sure CodeReady Containers can run on a typical laptop, some resource-heavy services get disabled by default.
+One of these is Prometheus and the related monitoring, alerting, and telemetry functionality.
+Telemetry functionality is responsible for listing your cluster in the <a href="https://cloud.redhat.com/openshift">Red Hat OpenShift Cluster Manager</a>.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You must assign additional memory to the CodeReady Containers virtual machine.
+At least 14 GiB of memory (a value of <code>14336</code>) is recommended for core functionality.
+Increased workloads will require more memory.
+For more information, see <a href="https://code-ready.github.io/crc/#configuring-the-virtual-machine_gsg">Configuring the virtual machine</a>.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Set the <code>enable-cluster-monitoring</code> configurable property to <code>true</code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc config set enable-cluster-monitoring true</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Start the virtual machine:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc start</pre>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Cluster monitoring cannot be disabled.
+To remove monitoring, alerting, and telemetry, set the <code>enable-cluster-monitoring</code> configurable property to <code>false</code> and delete the existing CodeReady Containers virtual machine.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="troubleshooting-codeready-containers_gsg"><a class="anchor" href="#troubleshooting-codeready-containers_gsg"></a><a class="link" href="#troubleshooting-codeready-containers_gsg">7. Troubleshooting Red&#160;Hat CodeReady Containers</a></h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The goal of Red&#160;Hat CodeReady Containers is to deliver an OpenShift environment for development and testing purposes.
+Issues occurring during installation or usage of specific OpenShift applications are outside of the scope of CodeReady Containers.
+Report such issues to the relevant project.
+For example, OpenShift tracks issues on <a href="https://github.com/openshift/origin/issues">GitHub</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="getting-shell-access-to-the-openshift-cluster_gsg"><a class="anchor" href="#getting-shell-access-to-the-openshift-cluster_gsg"></a><a class="link" href="#getting-shell-access-to-the-openshift-cluster_gsg">7.1. Getting shell access to the OpenShift cluster</a></h3>
+<div class="paragraph">
+<p>Direct access to the OpenShift cluster is not needed for regular use and is strongly discouraged.
+To access the cluster for troubleshooting or debugging purposes, follow this procedure.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>Enable <code class="command">oc</code> access to the cluster and log in as the <code>kubeadmin</code> user.
+For detailed steps, see <a href="https://code-ready.github.io/crc/#accessing-the-openshift-cluster-with-oc_gsg">Accessing the OpenShift cluster with <code>oc</code></a>.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Run <code class="command">oc get nodes</code>.
+The output will be similar to this:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">$ oc get nodes
+NAME                 STATUS   ROLES           AGE    VERSION
+crc-shdl4-master-0   Ready    master,worker   7d7h   v1.14.6+7e13ab9a7</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run <code class="command">oc debug nodes/<em>&lt;node&gt;</em></code> where <code><em>&lt;node&gt;</em></code> is the name of the node printed in the previous step.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="troubleshooting-expired-certificates_gsg"><a class="anchor" href="#troubleshooting-expired-certificates_gsg"></a><a class="link" href="#troubleshooting-expired-certificates_gsg">7.2. Troubleshooting expired certificates</a></h3>
+<div class="paragraph">
+<p>The system bundle in each released <code class="command">crc</code> executable expires 30 days after the release.
+This expiration is due to certificates embedded in the OpenShift cluster.
+The <code class="command">crc start</code> command triggers an automatic certificate renewal process when needed.
+Certificate renewal can add up to five minutes to the start time of the cluster.</p>
+</div>
+<div class="paragraph">
+<p>In order to avoid this additional startup time, or in case of failures in the certificate renewal process, use the following procedure:</p>
+</div>
+<div class="paragraph">
+<div class="title">Procedure</div>
+<p>To resolve expired certificate errors that cannot be automatically renewed:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="https://cloud.redhat.com/openshift/create/local">Download the latest CodeReady Containers release</a> and place the <code class="command">crc</code> executable in your <code>$PATH</code>.</p>
+</li>
+<li>
+<p>Remove the cluster with certificate errors using the <code class="command">crc delete</code> command:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc delete</pre>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code class="command">crc delete</code> command results in the loss of data stored in the CodeReady Containers virtual machine.
+Save any desired information stored in the virtual machine before running this command.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Set up the new release:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc setup</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Start the new virtual machine:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc start</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="troubleshooting-bundle-version-mismatch_gsg"><a class="anchor" href="#troubleshooting-bundle-version-mismatch_gsg"></a><a class="link" href="#troubleshooting-bundle-version-mismatch_gsg">7.3. Troubleshooting bundle version mismatch</a></h3>
+<div class="paragraph">
+<p>Created CodeReady Containers virtual machines contain bundle information and instance data.
+Bundle information and instance data is not updated when setting up a new CodeReady Containers release.
+This information is not updated due to customization in the earlier instance data.
+This will lead to errors when running the <code class="command">crc start</code> command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc start
+...
+FATA Bundle 'crc_hyperkit_4.2.8.crcbundle' was requested, but the existing VM is using
+'crc_hyperkit_4.2.2.crcbundle'</pre>
+</div>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Issue the <code class="command">crc delete</code> command before attempting to start the instance:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc delete</pre>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code class="command">crc delete</code> command results in the loss of data stored in the CodeReady Containers virtual machine.
+Save any desired information stored in the virtual machine before running this command.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="troubleshooting-unknown-issues_gsg"><a class="anchor" href="#troubleshooting-unknown-issues_gsg"></a><a class="link" href="#troubleshooting-unknown-issues_gsg">7.4. Troubleshooting unknown issues</a></h3>
+<div class="paragraph">
+<p>Resolve most issues by restarting CodeReady Containers with a clean state.
+This involves stopping the virtual machine, deleting it, reverting changes made by the <code class="command">crc setup</code> command, reapplying those changes, and restarting the virtual machine.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You set up the host machine through the <code class="command">crc setup</code> command.
+For more information, see <a href="https://code-ready.github.io/crc/#setting-up-codeready-containers_gsg">Setting up CodeReady Containers</a>.</p>
+</li>
+<li>
+<p>You started CodeReady Containers through the <code class="command">crc start</code> command.
+For more information, see <a href="https://code-ready.github.io/crc/#starting-the-virtual-machine_gsg">Starting the virtual machine</a>.</p>
+</li>
+<li>
+<p>You are using the latest CodeReady Containers release.
+Using a version earlier than CodeReady Containers 1.2.0 may result in errors related to expired x509 certificates.
+For more information, see <a href="https://code-ready.github.io/crc/#troubleshooting-expired-certificates_gsg">Troubleshooting expired certificates</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<div class="title">Procedure</div>
+<p>To troubleshoot CodeReady Containers, perform the following steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Stop the CodeReady Containers virtual machine:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc stop</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Delete the CodeReady Containers virtual machine:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc delete</pre>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code class="command">crc delete</code> command results in the loss of data stored in the CodeReady Containers virtual machine.
+Save any desired information stored in the virtual machine before running this command.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Clean up remaining changes from the <code class="command">crc setup</code> command:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc cleanup</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code class="command">crc cleanup</code> command removes an existing CodeReady Containers virtual machine and reverts changes to DNS entries created by the <code class="command">crc setup</code> command.
+On macOS, the <code class="command">crc cleanup</code> command also removes the system tray.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Set up your host machine to reapply the changes:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc setup</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Start the CodeReady Containers virtual machine:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc start</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The cluster takes a minimum of four minutes to start the necessary containers and Operators before serving a request.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If your issue is not resolved by this procedure, perform the following steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="https://github.com/code-ready/crc/issues">Search open issues</a> for the issue that you are encountering.</p>
+</li>
+<li>
+<p>If no existing issue addresses the encountered issue, <a href="https://github.com/code-ready/crc/issues/new">create an issue</a> and <a href="https://help.github.com/en/articles/file-attachments-on-issues-and-pull-requests">attach the <code class="filename">~/.crc/crc.log</code> file</a> to the created issue.
+The <code class="filename">~/.crc/crc.log</code> file has detailed debugging and troubleshooting information which can help diagnose the problem that you are experiencing.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.min.js"></script>
+</body>
+</html>
