@@ -23,11 +23,16 @@ github.com/YourFin/binappend
 ## explicit
 github.com/adrianriobo/gowinx/pkg/util
 github.com/adrianriobo/gowinx/pkg/util/logging
+github.com/adrianriobo/gowinx/pkg/win32/api/system-services
 github.com/adrianriobo/gowinx/pkg/win32/api/user-interface/windows-accesibility-features
 github.com/adrianriobo/gowinx/pkg/win32/api/user-interface/windows-and-messages
 github.com/adrianriobo/gowinx/pkg/win32/api/util
+github.com/adrianriobo/gowinx/pkg/win32/desktop/notificationarea
 github.com/adrianriobo/gowinx/pkg/win32/interaction
+github.com/adrianriobo/gowinx/pkg/win32/services/process
 github.com/adrianriobo/gowinx/pkg/win32/ux
+github.com/adrianriobo/gowinx/pkg/win32/ux/toolbar
+github.com/adrianriobo/gowinx/pkg/win32/ux/windows
 # github.com/alexbrainman/sspi v0.0.0-20180613141037-e580b900e9f5
 github.com/alexbrainman/sspi
 github.com/alexbrainman/sspi/negotiate

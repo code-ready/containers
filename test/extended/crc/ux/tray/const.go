@@ -1,5 +1,3 @@
-// +build !windows
-
 package tray
 
 const (
@@ -18,6 +16,5 @@ const (
 )
 
 const (
-	uxCheckAccessibilityDuration = "2s"
-	uxCheckAccessibilityRetry    = 10
+	trayClusterStateTimeout = "90"
 )
